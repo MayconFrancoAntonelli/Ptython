@@ -55,7 +55,7 @@ ROOT_URLCONF = "projeto01.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR/'base_templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -117,6 +117,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'base_static'
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+STATIC_ROOT = BASE_DIR / 'static'
+#para coletar os arquivos staticos rodar o comando
+#python manage.py collectstatic
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
